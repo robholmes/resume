@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "102743879519",
+    "firebase_url": "https://robholmes-resume.firebaseio.com",
+    "project_id": "robholmes-resume",
+    "storage_bucket": "robholmes-resume.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102743879519:android:b238abb14a684d41",
+        "android_client_info": {
+          "package_name": "app.robholmes.resume"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102743879519-6bue9i4m0482rv5e52o6pb56pl87h3gr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.robholmes.resume",
+            "certificate_hash": "fe9bd0166e321908582e854d06eba949f3bb7a98"
+          }
+        },
+        {
+          "client_id": "102743879519-4sgmlee6rgq7n8moailliosevo1obo7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ3ebHMASgVjTx9YGbIErPlElv76SsBfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102743879519-4sgmlee6rgq7n8moailliosevo1obo7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
