@@ -1,0 +1,29 @@
+<!--
+  ~ Copyright (c) 2019. Rob Holmes. This file is part of the Resume app of Rob Holmes, an Android
+  ~ Developer from Hampshire, United Kingdom, and is intended to demonstrate Rob's skills in an open
+  ~ manner. It therefore should not be used for any other purpose, or any other person's Resume, as
+  ~ this would be deceptive and misleading.
+  ~ If you find this code anywhere other than https://github.com/robholmes/Resume then it's probably
+  ~ a sign someone has copied it.
+  -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

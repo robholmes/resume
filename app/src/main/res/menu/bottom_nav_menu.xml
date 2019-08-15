@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019. Rob Holmes. This file is part of the Resume app of Rob Holmes, an Android
+  ~ Developer from Hampshire, United Kingdom, and is intended to demonstrate Rob's skills in an open
+  ~ manner. It therefore should not be used for any other purpose, or any other person's Resume, as
+  ~ this would be deceptive and misleading.
+  ~ If you find this code anywhere other than https://github.com/robholmes/Resume then it's probably
+  ~ a sign someone has copied it.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navSummary"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_summary" />
+
+    <item
+        android:id="@+id/navTechnical"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:title="@string/title_technical" />
+
+    <item
+        android:id="@+id/navLeadership"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="@string/title_leadership" />
+
+    <item
+        android:id="@+id/navExperience"
+        android:icon="@drawable/ic_work_black_24dp"
+        android:title="@string/title_experience" />
+
+    <item
+        android:id="@+id/navInterests"
+        android:icon="@drawable/ic_flight_black_24dp"
+        android:title="@string/title_interests" />
+
+</menu>
