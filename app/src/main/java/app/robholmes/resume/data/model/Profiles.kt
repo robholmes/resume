@@ -7,11 +7,13 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.data
+package app.robholmes.resume.data.model
 
-import app.robholmes.resume.data.model.Resume
+import kotlinx.serialization.Serializable
 
-interface DataSource {
-
-    suspend fun get(): Resume?
-}
+@Serializable
+data class Profiles(
+    val username: String,
+    val url: String,
+    val network: String
+)

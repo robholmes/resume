@@ -7,13 +7,19 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+@file:UseSerializers(LocalDateSerializer::class)
 
-import java.time.LocalDate
+package app.robholmes.resume.data.model
 
+import app.robholmes.resume.data.serializers.LocalDateSerializer
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.UseSerializers
+import org.threeten.bp.LocalDate
+
+@Serializable
 data class Education(
-    val endDate: LocalDate,
-    val startDate: LocalDate,
+    val endDate: LocalDate?,
+    val startDate: LocalDate?,
     val area: String,
     val studyType: String,
     val institution: String

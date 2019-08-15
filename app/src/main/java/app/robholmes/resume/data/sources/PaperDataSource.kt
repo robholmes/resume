@@ -10,7 +10,7 @@
 package app.robholmes.resume.data.sources
 
 import app.robholmes.resume.data.WritableDataSource
-import app.robholmes.resume.model.Resume
+import app.robholmes.resume.data.model.Resume
 import io.paperdb.Paper
 
 class PaperDataSource(

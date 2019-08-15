@@ -7,10 +7,21 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+@file:UseSerializers(LocalDateSerializer::class)
 
-data class Profiles(
-    val username: String,
-    val url: String,
-    val network: String
+package app.robholmes.resume.data.model
+
+import app.robholmes.resume.data.serializers.LocalDateSerializer
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.UseSerializers
+import org.threeten.bp.LocalDate
+
+@Serializable
+data class Work(
+    val summary: String,
+    val website: String,
+    val company: String,
+    val position: String,
+    val startDate: LocalDate?,
+    val highlights: List<String>
 )

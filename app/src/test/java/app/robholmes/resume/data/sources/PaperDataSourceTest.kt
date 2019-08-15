@@ -11,7 +11,7 @@ package app.robholmes.resume.data.sources
 
 import app.robholmes.resume.data.sources.PaperDataSource.Companion.KEY_EXPIRY
 import app.robholmes.resume.data.sources.PaperDataSource.Companion.KEY_RESUME
-import app.robholmes.resume.model.Resume
+import app.robholmes.resume.data.model.Resume
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

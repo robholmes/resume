@@ -7,14 +7,8 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.ext
 
-data class Basics(
-    val name: String,
-    val label: String,
-    val summary: String,
-    val website: String,
-    val email: String,
-    val location: Location,
-    val profiles: List<Profiles>
-)
+import retrofit2.Retrofit
+
+inline fun <reified T> Retrofit.create(): T = create(T::class.java)

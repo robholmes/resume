@@ -9,7 +9,7 @@
 
 package app.robholmes.resume.data
 
-import app.robholmes.resume.model.Resume
+import app.robholmes.resume.data.model.Resume
 
 interface WritableDataSource : DataSource {
 

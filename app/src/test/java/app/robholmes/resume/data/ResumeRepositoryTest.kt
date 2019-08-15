@@ -9,7 +9,7 @@
 
 package app.robholmes.resume.data
 
-import app.robholmes.resume.model.Resume
+import app.robholmes.resume.data.model.Resume
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify

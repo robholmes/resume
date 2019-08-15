@@ -7,13 +7,21 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.data.sources
 
-data class Resume(
-    val basics: Basics,
-    val education: List<Education>,
-    val references: List<References>,
-    val skills: List<Skills>,
-    val work: List<Work>,
-    val meta: Meta
-)
+import app.robholmes.resume.data.DataSource
+import app.robholmes.resume.data.api.ResumeApi
+import app.robholmes.resume.data.model.Resume
+
+class RemoteDataSource(
+    private val api: ResumeApi
+) : DataSource {
+
+    override suspend fun get(): Resume? {
+        return try {
+            api.resume()
+        } catch (e: Exception) {
+            null
+        }
+    }
+}

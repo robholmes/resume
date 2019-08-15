@@ -7,15 +7,17 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.data.model
 
-import java.time.LocalDate
+import kotlinx.serialization.Serializable
 
-data class Work(
+@Serializable
+data class Basics(
+    val name: String,
+    val label: String,
     val summary: String,
     val website: String,
-    val company: String,
-    val position: String,
-    val startDate: LocalDate,
-    val highlights: List<String>
+    val email: String,
+    val location: Location,
+    val profiles: List<Profiles>
 )

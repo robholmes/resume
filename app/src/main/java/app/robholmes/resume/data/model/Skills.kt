@@ -7,15 +7,13 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.data.sources
+package app.robholmes.resume.data.model
 
-import app.robholmes.resume.data.DataSource
-import app.robholmes.resume.model.Resume
+import kotlinx.serialization.Serializable
 
-class FirebaseDataSource : DataSource {
-
-    override suspend fun get(): Resume? {
-        // TODO
-        return null
-    }
-}
+@Serializable
+data class Skills(
+    val keywords: List<String>,
+    val level: String,
+    val name: String
+)

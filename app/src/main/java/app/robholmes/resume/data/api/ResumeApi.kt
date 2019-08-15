@@ -7,9 +7,13 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.data.api
 
-data class Location(
-    val city: String,
-    val countryCode: String
-)
+import app.robholmes.resume.data.model.Resume
+import retrofit2.http.GET
+
+interface ResumeApi {
+
+    @GET("resume.json")
+    suspend fun resume(): Resume?
+}

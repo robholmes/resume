@@ -10,6 +10,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlinx-serialization'
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'org.jlleitschuh.gradle.ktlint'
@@ -37,6 +38,7 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.1"
 
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
@@ -52,7 +54,15 @@ dependencies {
 
     implementation 'org.koin:koin-androidx-viewmodel:2.0.1'
     implementation 'org.koin:koin-core-ext:2.0.1'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.4.0'
+
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+
     implementation 'io.paperdb:paperdb:2.6'
 
     testImplementation 'junit:junit:4.13-beta-3'

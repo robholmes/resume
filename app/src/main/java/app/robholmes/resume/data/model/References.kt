@@ -7,8 +7,12 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.data.model
 
-data class Meta(
-    val theme: String
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class References(
+    val reference: String,
+    val name: String
 )

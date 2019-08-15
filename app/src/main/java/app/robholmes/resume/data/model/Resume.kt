@@ -7,9 +7,16 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.model
+package app.robholmes.resume.data.model
 
-data class References(
-    val reference: String,
-    val name: String
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Resume(
+    val basics: Basics,
+    val education: List<Education>,
+    val references: List<References>,
+    val skills: List<Skills>,
+    val work: List<Work>,
+    val meta: Meta
 )

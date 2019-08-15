@@ -89,7 +89,7 @@ class ExpiryProviderTest {
     }
 
     @Test
-    fun `newExpiry should`() {
+    fun `newExpiry should return `() {
         every { LocalDateTime.now() } returns now
         every { now.plusHours(any()) } returns nowPlusSomeHours
         every { nowPlusSomeHours.format(any()) } returns "future time"

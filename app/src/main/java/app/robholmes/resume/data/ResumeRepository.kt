@@ -10,7 +10,7 @@
 package app.robholmes.resume.data
 
 import androidx.annotation.WorkerThread
-import app.robholmes.resume.model.Resume
+import app.robholmes.resume.data.model.Resume
 
 class ResumeRepository(
     private val localDataSource: WritableDataSource,
