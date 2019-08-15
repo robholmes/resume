@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/navSummary"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_portrait_black_24dp"
         android:title="@string/title_summary" />
 
     <item
