@@ -9,30 +9,22 @@
 
 package app.robholmes.resume
 
-import android.app.Application
 import app.robholmes.resume.injection.appModules
-import io.paperdb.Paper
+import io.mockk.mockk
+import org.junit.Test
 import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.test.AutoCloseKoinTest
+import org.koin.test.check.checkModules
 
-class App : Application() {
+class AppModulesTest : AutoCloseKoinTest() {
 
-    override fun onCreate() {
-        super.onCreate()
-        initKoin()
-        initPaperDatabase()
-    }
-
-    private fun initKoin() {
+    @Test
+    fun `all modules and dependencies are available`() {
         startKoin {
-            androidContext(this@App)
-            androidLogger()
+            printLogger()
+            androidContext(mockk())
             modules(appModules())
-        }
-    }
-
-    private fun initPaperDatabase() {
-        Paper.init(this)
+        }.checkModules()
     }
 }
