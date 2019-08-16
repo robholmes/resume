@@ -26,6 +26,7 @@ import app.robholmes.resume.ui.leadership.LeadershipFragment
 import app.robholmes.resume.ui.summary.SummaryFragment
 import app.robholmes.resume.ui.technical.TechnicalFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 class MainActivity : FragmentActivity(R.layout.activity_main) {
 
@@ -48,6 +49,7 @@ class MainActivity : FragmentActivity(R.layout.activity_main) {
             navExperience -> showExperience()
             navInterests -> showInterests()
         }
+        Timber.d("Nav item shown '${item.title}'")
         return true
     }
 

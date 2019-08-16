@@ -11,6 +11,7 @@ package app.robholmes.resume
 
 import android.app.Application
 import app.robholmes.resume.injection.appModules
+import app.robholmes.resume.utils.DebugTree
 import app.robholmes.resume.utils.ReleaseTree
 import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext
@@ -28,20 +29,8 @@ class App : Application() {
         initPaperDatabase()
     }
 
-    private fun initTimber() = Timber.plant(createTree())
-
-    private fun createTree(): Timber.Tree {
-        if (BuildConfig.DEBUG) return ReleaseTree()
-
-        return object : Timber.DebugTree() {
-            override fun createStackElementTag(element: StackTraceElement) = String.format(
-                "Class: %s, Line: %s, Method: %s",
-                super.createStackElementTag(element),
-                element.lineNumber,
-                element.methodName
-            )
-        }
-    }
+    private fun initTimber() =
+        Timber.plant(if (BuildConfig.DEBUG) DebugTree() else ReleaseTree())
 
     private fun initKoin() {
         startKoin {
