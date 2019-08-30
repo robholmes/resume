@@ -9,15 +9,17 @@
 
 package app.robholmes.resume.data
 
-import androidx.annotation.WorkerThread
 import app.robholmes.resume.data.model.Resume
+import app.robholmes.resume.utils.CoroutineDispatcherProvider
+import kotlinx.coroutines.withContext
 
 class ResumeRepository(
     private val localDataSource: WritableDataSource,
-    private val remoteDataSource: DataSource
+    private val remoteDataSource: DataSource,
+    private val dispatcherProvider: CoroutineDispatcherProvider
 ) {
 
-    @WorkerThread
-    suspend fun resume(): Resume? =
+    suspend fun resume(): Resume? = withContext(dispatcherProvider.IO) {
         localDataSource.get() ?: remoteDataSource.get()?.also { localDataSource.save(it) }
+    }
 }

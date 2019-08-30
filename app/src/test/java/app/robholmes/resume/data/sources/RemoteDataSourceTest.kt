@@ -21,8 +21,8 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 import retrofit2.HttpException
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
-import kotlin.test.assertNull
 import kotlin.test.assertSame
 
 class RemoteDataSourceTest {
@@ -50,12 +50,13 @@ class RemoteDataSourceTest {
     }
 
     @Test
-    fun `get should return null when error occurs`() {
+    fun `get should re-throw exception from api call`() {
         coEvery { resumeApi.resume() } throws mockk<HttpException>(relaxed = true)
 
-        val result = runBlocking { dataSource.get() }
+        assertFailsWith<HttpException> {
+            runBlocking { dataSource.get() }
+        }
 
-        assertNull(result)
         coVerify(exactly = 1) { resumeApi.resume() }
     }
 }

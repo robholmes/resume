@@ -7,14 +7,14 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.data.sources
+package app.robholmes.resume.utils
 
-import app.robholmes.resume.data.DataSource
-import app.robholmes.resume.data.api.ResumeApi
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
-class RemoteDataSource(
-    private val api: ResumeApi
-) : DataSource {
+class CoroutineDispatcherProviderUnconfined : CoroutineDispatcherProvider() {
 
-    override suspend fun get() = api.resume()
+    override val Default: CoroutineDispatcher = Dispatchers.Unconfined
+    override val Main: CoroutineDispatcher = Dispatchers.Unconfined
+    override val IO: CoroutineDispatcher = Dispatchers.Unconfined
 }

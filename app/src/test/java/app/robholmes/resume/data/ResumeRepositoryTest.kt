@@ -10,6 +10,7 @@
 package app.robholmes.resume.data
 
 import app.robholmes.resume.data.model.Resume
+import app.robholmes.resume.utils.CoroutineDispatcherProviderUnconfined
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -34,6 +35,9 @@ class ResumeRepositoryTest {
     private lateinit var localResume: Resume
     @MockK
     private lateinit var remoteResume: Resume
+
+    @Suppress("unused")
+    private val coroutineDispatcherProvider = CoroutineDispatcherProviderUnconfined()
 
     @InjectMockKs
     private lateinit var repo: ResumeRepository
