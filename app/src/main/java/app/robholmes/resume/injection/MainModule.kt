@@ -9,9 +9,11 @@
 
 package app.robholmes.resume.injection
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    utilsModule
-)
+import app.robholmes.resume.ui.main.MainViewModel
+import org.koin.androidx.experimental.dsl.viewModel
+import org.koin.dsl.module
+
+val mainModule = module {
+
+    viewModel<MainViewModel>()
+}

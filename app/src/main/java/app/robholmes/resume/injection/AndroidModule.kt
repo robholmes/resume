@@ -9,9 +9,11 @@
 
 package app.robholmes.resume.injection
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    utilsModule
-)
+import android.content.res.Resources
+import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.module
+
+val androidModule = module {
+
+    single<Resources> { androidContext().resources }
+}

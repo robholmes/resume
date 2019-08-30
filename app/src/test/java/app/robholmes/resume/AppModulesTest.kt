@@ -23,7 +23,7 @@ class AppModulesTest : AutoCloseKoinTest() {
     fun `all modules and dependencies are available`() {
         startKoin {
             printLogger()
-            androidContext(mockk())
+            androidContext(mockk(relaxed = true))
             modules(appModules())
         }.checkModules()
     }

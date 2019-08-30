@@ -9,9 +9,11 @@
 
 package app.robholmes.resume.injection
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    utilsModule
-)
+import app.robholmes.resume.utils.CoroutineDispatcherProvider
+import org.koin.dsl.module
+import org.koin.experimental.builder.single
+
+val utilsModule = module {
+
+    single<CoroutineDispatcherProvider>()
+}

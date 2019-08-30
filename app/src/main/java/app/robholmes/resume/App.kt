@@ -13,6 +13,7 @@ import android.app.Application
 import app.robholmes.resume.injection.appModules
 import app.robholmes.resume.utils.DebugTree
 import app.robholmes.resume.utils.ReleaseTree
+import com.jakewharton.threetenabp.AndroidThreeTen
 import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -25,12 +26,17 @@ class App : Application() {
         super.onCreate()
 
         initTimber()
+        initDateTime()
         initKoin()
         initPaperDatabase()
     }
 
     private fun initTimber() =
         Timber.plant(if (BuildConfig.DEBUG) DebugTree() else ReleaseTree())
+
+    private fun initDateTime() {
+        AndroidThreeTen.init(this)
+    }
 
     private fun initKoin() {
         startKoin {

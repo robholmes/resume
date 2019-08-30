@@ -11,6 +11,7 @@ package app.robholmes.resume.injection
 
 import app.robholmes.resume.BuildConfig
 import app.robholmes.resume.data.DataSource
+import app.robholmes.resume.data.MessagePublisher
 import app.robholmes.resume.data.ResumeRepository
 import app.robholmes.resume.data.WritableDataSource
 import app.robholmes.resume.data.api.ResumeApi
@@ -36,6 +37,7 @@ val dataModule = module {
     singleBy<WritableDataSource, PaperDataSource>()
 
     single<ExpiryProvider>()
+    single<MessagePublisher>()
     single<ResumeRepository>()
 
     single<ResumeApi> { get<Retrofit>().create() }
@@ -43,7 +45,7 @@ val dataModule = module {
     single<Retrofit> {
         Retrofit.Builder()
             .client(get())
-            .baseUrl("https://robholmes.app/")
+            .baseUrl("https://robholmes-resume.web.app/")
             .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
             .build()
     }

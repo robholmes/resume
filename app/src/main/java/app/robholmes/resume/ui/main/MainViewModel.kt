@@ -7,11 +7,16 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.injection
+package app.robholmes.resume.ui.main
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    utilsModule
-)
+import androidx.lifecycle.ViewModel
+import app.robholmes.resume.data.MessagePublisher
+import app.robholmes.resume.data.model.Message
+import kotlinx.coroutines.channels.ReceiveChannel
+
+class MainViewModel(
+    private val messagePublisher: MessagePublisher
+) : ViewModel() {
+
+    fun snackbarMessages(): ReceiveChannel<Message> = messagePublisher.messages()
+}
