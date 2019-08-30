@@ -9,13 +9,16 @@
 
 package app.robholmes.resume.data.model
 
-import kotlinx.serialization.Serializable
-
-@Serializable
-data class Location(
-    val address: String,
-    val postalCode: String,
-    val city: String,
-    val region: String,
-    val countryCode: String
+sealed class Message(
+    open val message: String
 )
+
+data class SimpleMessage(
+    override val message: String
+) : Message(message)
+
+data class ActionMessage(
+    override val message: String,
+    val actionTitle: String,
+    val actionCallback: () -> Unit
+) : Message(message)

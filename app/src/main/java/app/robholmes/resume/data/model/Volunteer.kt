@@ -7,15 +7,23 @@
  * a sign someone has copied it.
  */
 
+@file:UseSerializers(LocalDateSerializer::class)
+
 package app.robholmes.resume.data.model
 
+import app.robholmes.resume.data.serializers.LocalDateSerializer
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.UseSerializers
+import org.threeten.bp.LocalDate
 
 @Serializable
-data class Location(
-    val address: String,
-    val postalCode: String,
-    val city: String,
-    val region: String,
-    val countryCode: String
+data class Volunteer(
+    val organization: String,
+    val position: String,
+    val location: String? = null,
+    val website: String? = null,
+    val startDate: LocalDate?,
+    val endDate: LocalDate? = null,
+    val summary: String,
+    val highlights: List<String>
 )

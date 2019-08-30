@@ -18,10 +18,12 @@ import org.threeten.bp.LocalDate
 
 @Serializable
 data class Work(
-    val summary: String,
-    val website: String,
     val company: String,
     val position: String,
+    val location: String? = null,
+    val website: String? = null,
     val startDate: LocalDate?,
+    val endDate: LocalDate? = null,
+    val summary: String,
     val highlights: List<String>
 )

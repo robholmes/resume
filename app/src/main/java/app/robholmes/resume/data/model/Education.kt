@@ -18,9 +18,11 @@ import org.threeten.bp.LocalDate
 
 @Serializable
 data class Education(
-    val endDate: LocalDate?,
-    val startDate: LocalDate?,
+    val institution: String,
     val area: String,
     val studyType: String,
-    val institution: String
+    val startDate: LocalDate?,
+    val endDate: LocalDate? = null,
+    val gpa: String? = null,
+    val courses: List<String>
 )

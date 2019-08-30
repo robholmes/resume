@@ -18,5 +18,10 @@ data class Resume(
     val references: List<References>,
     val skills: List<Skills>,
     val work: List<Work>,
+    val volunteer: List<Volunteer>,
+    val awards: List<Award>,
+    val publications: List<Publication>,
+    val languages: List<Language>,
+    val interests: List<Interest>,
     val meta: Meta
 )
