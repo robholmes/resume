@@ -27,7 +27,6 @@ import kotlinx.android.synthetic.main.summary.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
-
 class SummaryFragment : Fragment(R.layout.summary) {
 
     private val viewModel: SummaryViewModel by viewModel()
