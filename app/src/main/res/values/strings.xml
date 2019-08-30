@@ -17,4 +17,9 @@
     <string name="title_interests">Interests</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="retry">Retry</string>
+    <string name="not_found_error">Resume data not found</string>
+    <string name="http_error">Server error fetching Resume data</string>
+    <string name="unknown_error">Unknown error fetching Resume data</string>
 </resources>

@@ -7,12 +7,17 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.injection
+package app.robholmes.resume.ui.summary
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    summaryModule,
-    utilsModule
-)
+import android.content.res.Resources
+import app.robholmes.resume.R
+
+class SummaryResourceProvider(
+    private val resources: Resources
+) {
+
+    fun retry(): String = resources.getString(R.string.retry)
+    fun notFoundError(): String = resources.getString(R.string.not_found_error)
+    fun httpError(): String = resources.getString(R.string.http_error)
+    fun unknownError(): String = resources.getString(R.string.unknown_error)
+}

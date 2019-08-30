@@ -96,13 +96,14 @@ class LocalDateSerializerTest {
             startDate = localDate,
             area = "test area",
             studyType = "test study type",
-            institution = "test institution"
+            institution = "test institution",
+            courses = emptyList()
         )
 
         val result = Json(Stable).stringify(Education.serializer(), education)
 
         assertEquals(
-            """{"endDate":"yyyy-mm-dd","startDate":"yyyy-mm-dd","area":"test area","studyType":"test study type","institution":"test institution"}""",
+            """{"institution":"test institution","area":"test area","studyType":"test study type","startDate":"yyyy-mm-dd","endDate":"yyyy-mm-dd","gpa":null,"courses":[]}""",
             result
         )
     }
@@ -113,7 +114,7 @@ class LocalDateSerializerTest {
         every { LocalDate.parse(any(), any()) } returns localDate
 
         val json =
-            """{"endDate":"yyyy-mm-dd","startDate":"yyyy-mm-dd","area":"test area","studyType":"test study type","institution":"test institution"}"""
+            """{"endDate":"yyyy-mm-dd","startDate":"yyyy-mm-dd","area":"test area","studyType":"test study type","institution":"test institution","courses":[]}"""
 
         val result = Json(Stable).parse(Education.serializer(), json)
 

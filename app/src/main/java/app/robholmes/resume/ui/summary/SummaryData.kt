@@ -7,12 +7,13 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.injection
+package app.robholmes.resume.ui.summary
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    summaryModule,
-    utilsModule
+data class SummaryData(
+    val pictureUrl: String,
+    val name: String,
+    val label: String,
+    val website: String,
+    val summary: String,
+    val location: String
 )

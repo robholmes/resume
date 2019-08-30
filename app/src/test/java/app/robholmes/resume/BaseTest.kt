@@ -7,12 +7,15 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.injection
+package app.robholmes.resume
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    summaryModule,
-    utilsModule
-)
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import org.junit.Rule
+
+
+open class BaseTest {
+
+    @Rule
+    @JvmField
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
+}

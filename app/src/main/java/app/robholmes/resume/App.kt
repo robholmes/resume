@@ -13,6 +13,7 @@ import android.app.Application
 import app.robholmes.resume.injection.appModules
 import app.robholmes.resume.utils.DebugTree
 import app.robholmes.resume.utils.ReleaseTree
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.jakewharton.threetenabp.AndroidThreeTen
 import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext
@@ -29,6 +30,7 @@ class App : Application() {
         initDateTime()
         initKoin()
         initPaperDatabase()
+        initFresco()
     }
 
     private fun initTimber() =
@@ -48,5 +50,9 @@ class App : Application() {
 
     private fun initPaperDatabase() {
         Paper.init(this)
+    }
+
+    private fun initFresco() {
+        Fresco.initialize(this)
     }
 }

@@ -9,10 +9,17 @@
 
 package app.robholmes.resume.injection
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    summaryModule,
-    utilsModule
-)
+import app.robholmes.resume.ui.summary.SummaryDataMapper
+import app.robholmes.resume.ui.summary.SummaryResourceProvider
+import app.robholmes.resume.ui.summary.SummaryViewModel
+import org.koin.androidx.experimental.dsl.viewModel
+import org.koin.dsl.module
+import org.koin.experimental.builder.single
+
+val summaryModule = module {
+
+    single<SummaryDataMapper>()
+    single<SummaryResourceProvider>()
+
+    viewModel<SummaryViewModel>()
+}

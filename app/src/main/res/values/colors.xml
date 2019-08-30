@@ -12,4 +12,6 @@
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#00628B</color>
     <color name="colorAccent">#FFC107</color>
+
+    <color name="viewPlaceholderBackground">#E3F2FD</color>
 </resources>

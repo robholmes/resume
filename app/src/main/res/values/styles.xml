@@ -26,4 +26,19 @@
 
     <style name="AppTheme.PopupOverlay" parent="Theme.MaterialComponents.DayNight" />
 
+    <style name="Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">38sp</item>
+    </style>
+
+    <style name="Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Body1" parent="TextAppearance.MaterialComponents.Body1">
+    </style>
+
 </resources>

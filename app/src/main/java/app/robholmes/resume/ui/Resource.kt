@@ -7,12 +7,9 @@
  * a sign someone has copied it.
  */
 
-package app.robholmes.resume.injection
+package app.robholmes.resume.ui
 
-fun appModules() = listOf(
-    androidModule,
-    dataModule,
-    mainModule,
-    summaryModule,
-    utilsModule
-)
+sealed class Resource<T>
+class Loading<T> : Resource<T>()
+class Error<T> : Resource<T>()
+data class Success<T>(val value: T) : Resource<T>()
